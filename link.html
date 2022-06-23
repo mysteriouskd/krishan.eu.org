@@ -84,7 +84,7 @@ position: absolute;
 right: 0;
 }
 
-.green a{
+a.green{
 font-weight: bold;
 color: green;
 }
@@ -170,8 +170,9 @@ msg.innerHTML= `<span class="red">${d.error}</span>
 <span>Try a different path</span>`;
 }
 else{
-msg.innerHTML=`<span class="green"><a href="${d.shortURL}">${d.shortURL}</a></span> 
-<span>leads to <br> <a href="${d.originalURL}">${d.originalURL}</a></span>`;
+msg.innerHTML=`
+<a class="green" href="${d.shortURL}">${d.shortURL}</a> leads to <br>
+<a href="${d.originalURL}">${d.originalURL}</a>`;
 }
 }).catch(x=> msg.innerHTML= `<span class="red">${x}</span>`);
 
